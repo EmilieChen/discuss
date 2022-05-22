@@ -11,7 +11,10 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script>
       <%= if @conn.assigns.user do %>
+        window.user_signin = true
         window.userToken = "<%= Phoenix.Token.sign(DiscussWeb.Endpoint, "key", @conn.assigns.user.id) %>"
+      <% else %>
+        window.user_signin = false
       <% end %>
     </script>
 

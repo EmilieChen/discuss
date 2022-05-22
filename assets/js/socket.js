@@ -3,7 +3,7 @@ import {Socket} from "phoenix"
 
 let socket = new Socket("/socket", { params: { token: window.userToken } })
 
-socket.connect()
+if (window.user_signin){ socket.connect() }
 
 const createSocket = (topicId) => {
     let channel = socket.channel(`comments:${topicId}`, {})
