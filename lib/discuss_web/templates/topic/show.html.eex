@@ -3,6 +3,7 @@
 <div class="input-field">
     <textarea class="materialize-textarea"></textarea>
     <button class="btn">Add Comment</button>
+    <br><br>
     <ul class="collection">
         ${comment.content}
     </ul>
@@ -13,3 +14,11 @@
     });
     
 </script>
+
+
+<div class="fixel-action-btn">
+    <%= link to: Routes.topic_path(@conn, :index), class: "btn-floating btn-large waves-effect waves-light red" do %>
+        <i class="material-icons">arrow_back</i>
+    <% end %>
+    </a>
+</div>
